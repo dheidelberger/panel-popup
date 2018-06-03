@@ -1,6 +1,6 @@
 # Panel Popup
 
-This is a library that generates and manages a "please wait" modal overlay layer on an HTML page. While not exclusively compatibile with [Adobe CEP panels](https://github.com/Adobe-CEP), that is the intended use case.
+This is a library that generates and manages a "please wait" modal overlay layer on an HTML page. While not exclusively compatibile with [Adobe CEP panels](https://github.com/Adobe-CEP), that is the intended use case. I pretty much exclusively work in Premiere and that's what I've used this library with the most (and also where I've tested the sample project the most). The sample should work across all the Creative Cloud apps, but if you run into any issues, try opening the panel in Premiere.
 
 When executing extendscript from a CEP panel, [the UI freezes](https://forums.adobe.com/thread/2441258), so it makes sense to give the user some sort of message that the application is working. Unfortunately animated spinners don't work (because of the UI blocking), so a modal overlay seems to be the best bet.
 
@@ -132,6 +132,10 @@ In addition to specifying a callback in the `options` object, you can pass a cal
 The styling is very basic and easy to customize. You can look at the [panel-popup.css](Files/panel-popup.css) file to see what gets styled. There are some comments in there to get you started. To customize the look of the popup, the safest option is to create your own stylesheet that overrides some of the default styles. The sample project has a [custom stylesheet](PanelPopupSample/css/panel-popup-custom.css) that can be toggled on and off to give you an idea of how to do this.
 
 A quick note about fonts. I set the `font-family` to be `Arial, Helvetica, sans-serif` because I think it looks nicer than the default panel font. Other than that, I've tried to mostly stay out of your way when it comes to styling the text because I'm assuming you're working with some sort of style template already. You can disable my font choice and let your style supercede mine if you set the `.popup-container` `font-family` to `inherit` in your custom css file (just be sure it gets loaded after `panel-popup.css`). I've implemented this in the [custom stylesheet](PanelPopupSample/css/panel-popup-custom.css) in the sample so you can see how it's done. In the future, I may also try to implement some sort of optional [Bootstrap](https://getbootstrap.com/) integration to add Bootstrap classes to the button in particular. Still thinking about that one.
+
+###### More Information
+
+The [index.js](PanelPopupSample/lib/index.js) file in the sample panel is heavily commented and shows a number of different ways of creating a popup as well as some of the pitfalls to avoid. The complete API is  also documented below.
 
 ## Full Documentation
 <a name="PanelPopup"></a>

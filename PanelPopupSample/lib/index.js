@@ -15,6 +15,10 @@ function basicClick() {
 //Let's try some template strings
 function templateStrings() {
     
+    /*Because we're using setContent here and myPopup is a global object, 
+    if we've clicked another button that set a callback or enabled the close button, 
+    those will be active when this popup is shown.
+    If we don't want this behavior, we could simply re-initialize myPopup: myPopup = new PanelPopup().*/
     myPopup.setContent("<h2>Showing Popup</h2><p>It will disappear after {delay} {unit length}. {This template} won't be replaced</p>")
     //{This template} won't be replaced because we're not passing it as a key in the templateKeys object. 
     //The popup will ignore template strings it can't find a key for.
@@ -114,9 +118,9 @@ function callbackFail1() {
 
 //We're looking at a few things here. 
 //First, we see that by giving hidePopup a callback argument, we overwrite the callback specified when we call showPopup
-//Second, by nesting anonymous functions, the localPopup variable stays in scope and we don't need to define it as a global variable
-//While global variables are generally frowned upon, imho, double nesting callback functions like this is ugly and hard to follow
-//So I suggest defining the popup globally for the sake of readability
+//Second, by nesting anonymous functions, the localPopup variable stays in scope and we don't need to define it as a global variable.
+//  While global variables are generally frowned upon, IMHO, double nesting callback functions like this is ugly and hard to follow,
+//  so I suggest defining the popup globally for the sake of readability
 function callbackOverwrite() {
     var localPopup = new PanelPopup("<h2>Alternate Callback</h2><p>We reach the alt. callback because we set it in hidePopup.");
     localPopup.showPopup({
@@ -160,7 +164,8 @@ function toggleStyle() {
     }
 
     var stylePopup = new PanelPopup();
-    stylePopup.showPopup("<h2>Custom Styles have been {state}</h2><p>You can override the default styles with your own css stylesheet.</p>",{
+    stylePopup.showPopup("<h2>Custom Styles have been {state}</h2><p>You can override the default styles with your own css stylesheet.</p>",
+    {
         closeButton: true,
         templateKeys: {
             state: styleState
