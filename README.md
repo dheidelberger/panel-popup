@@ -224,7 +224,7 @@ Hide the popup.
 <a name="options"></a>
 
 ### options : <code>Object</code>
-Options object that can be passed to set advanced features of the overlay including template strings. All of the properties are optional.
+Options object that can be passed to set advanced features of the overlay including template strings. All of the properties are optional. Once these properties are set, they're set for the life of the PanelPopup, meaning, if you call showPopup more than once, it will remember the settings from the first call when you make the second call. You can re-initialize the PanelPopup to reset the options.
 
 **Properties**
 
