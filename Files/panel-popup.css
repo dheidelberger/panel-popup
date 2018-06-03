@@ -1,0 +1,31 @@
+.ppopup-waiting {
+	
+	position: absolute;
+	top: 35%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+
+
+}
+
+.ppopup-overlay {
+	background: #000000;
+	opacity: 0.95;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.ppopup-container {
+	position: absolute;
+	top: 35%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: white
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.davidheidelberger.PanelPopup.Sample">
+        <HostList>
+            <Host Name="DRWV" Port="7777"/>
+            <Host Name="FLPR" Port="7778"/>
+            <Host Name="IDSN" Port="7779"/>
+            <Host Name="AICY" Port="7780"/>
+            <Host Name="ILST" Port="7781"/>
+            <Host Name="PHSP" Port="7782"/>
+            <Host Name="PHXS" Port="7783"/>
+            <Host Name="PPRO" Port="7784"/>
+            <Host Name="PRLD" Port="7785"/>
+            <Host Name="AEFT" Port="7786"/>
+            <Host Name="DEMO" Port="7787"/>
+            <Host Name="AUDT" Port="7788"/>
+            <Host Name="LTRM" Port="7789"/>
+            <Host Name="MUSE" Port="7790"/>
+        </HostList>
+    </Extension>
+</ExtensionList>
