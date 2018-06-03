@@ -129,7 +129,7 @@ In addition to specifying a callback in the `options` object, you can pass a cal
 
 ###### Styling
 
-The styling is very basic and easy to customize. You can look at the (panel-popup.css)[Files/panel-popup.css] file to see what gets styled. There are some comments in there to get you started. To customize the look of the popup, the safest option is to create your own stylesheet that overrides some of the default styles. The sample project has a (custom stylesheet)[PanelPopupSample/css/panel-popup-custom.css] that can be toggled on and off to give you an idea of how to do this.
+The styling is very basic and easy to customize. You can look at the [panel-popup.css](Files/panel-popup.css) file to see what gets styled. There are some comments in there to get you started. To customize the look of the popup, the safest option is to create your own stylesheet that overrides some of the default styles. The sample project has a [custom stylesheet](PanelPopupSample/css/panel-popup-custom.css) that can be toggled on and off to give you an idea of how to do this.
 
 ## Full Documentation
 <a name="PanelPopup"></a>
