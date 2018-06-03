@@ -55,7 +55,7 @@ var delay = setTimeout(function (){
     csInterface.evalScript('Do something here')
 }, 100);
 ```
-**Tip:** From trial and error, I've found that about 50 milliseconds is a long enough delay but less than that is not. I've been doing 100 milliseconds just to be safe. If someone encounters a situation where even 100 isn't enough, first of all, get a faster computer! But second, shoot me an email or file a [bug report](https://github.com/dheidelberger/panel-popup/issues) and let know and I'll increase the delay.
+**Tip:** With trial and error, I've found that about 50 milliseconds is a long enough delay but less than that is not. I've been doing 100 milliseconds just to be safe. If someone encounters a situation where even 100 isn't enough, first of all, get a faster computer! But second, shoot me an email or file a [bug report](https://github.com/dheidelberger/panel-popup/issues) and let know and I'll increase the delay.
 
 
 To hide the popup, use the `hidePopup` method. You will likely want to declare `myPopup` as a global variable so that you can call its methods from anywhere in your panel code.
