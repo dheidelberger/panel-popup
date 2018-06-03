@@ -23,7 +23,7 @@ function templateStrings() {
     //{This template} won't be replaced because we're not passing it as a key in the templateKeys object. 
     //The popup will ignore template strings it can't find a key for.
     
-    var delay = 3000; //Delay before the popup disappears in microseconds. Adjust this value to see how the template strings change.
+    var delay = 3000; //Delay before the popup disappears in milliseconds. Adjust this value to see how the template strings change.
     
     var delayDisplay = delay/1000
     

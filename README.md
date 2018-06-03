@@ -1,10 +1,12 @@
 # Panel Popup
 
-This is a library that generates and manages a "please wait" modal overlay layer on an HTML page. While not exclusively compatibile with [Adobe CEP panels](https://github.com/Adobe-CEP), that is the intended use case. I pretty much exclusively work in Premiere and that's what I've used this library with the most (and also where I've tested the sample project the most). The sample should work across all the Creative Cloud apps, but if you run into any issues, try opening the panel in Premiere.
+This is a library that generates and manages a "please wait" modal overlay layer on an HTML page. While not exclusively compatibile with [Adobe CEP panels](https://github.com/Adobe-CEP), that is the intended use case.
 
 When executing extendscript from a CEP panel, [the UI freezes](https://forums.adobe.com/thread/2441258), so it makes sense to give the user some sort of message that the application is working. Unfortunately animated spinners don't work (because of the UI blocking), so a modal overlay seems to be the best bet.
 
 This repository consists of the [source files](Files/) for the overlay as well as a [sample CEP panel](PanelPopupSample/) that runs through some of the features of the library.
+
+*Note: I pretty much exclusively work in Premiere and that's what I've used this library with the most (and also where I've tested the sample project the most). The sample should work across all the Creative Cloud apps, but if you run into any issues, try opening the panel in Premiere.*
 
 ![A basic screenshot](Images/screenshot.png)
 
@@ -53,6 +55,8 @@ var delay = setTimeout(function (){
     csInterface.evalScript('Do something here')
 }, 100);
 ```
+**Tip:** From trial and error, I've found that about 50 milliseconds is a long enough delay but less than that is not. I've been doing 100 milliseconds just to be safe. If someone encounters a situation where even 100 isn't enough, first of all, get a faster computer! But second, shoot me an email or file a [bug report](https://github.com/dheidelberger/panel-popup/issues) and let know and I'll increase the delay.
+
 
 To hide the popup, use the `hidePopup` method. You will likely want to declare `myPopup` as a global variable so that you can call its methods from anywhere in your panel code.
 ```javascript
