@@ -71,6 +71,7 @@ var myPopup;
 function initActionHere() {
     myPopup = new PanelPopup("<h2>Working very hard</h2><p>This may take a while for large projects</p>");
     var delay = setTimeout(function (){
+        var csInterface = new CSInterface();
         csInterface.evalScript('Do something here', finishedAction)
     }, 100);
 
