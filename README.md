@@ -8,10 +8,10 @@ This repository consists of the source files for the overlay as well as a sample
 
 ## Installation
 
-Installation is simple. Copy the following files into your panel folder. You'll find them in the [Files](Files/) folder. In the sample panel, the .js file can be found in a "lib" folder and the .css file in a "css" folder.
+Installation is simple. Copy the following files into your panel folder. You'll find them in the [Files](Files/) folder. In the sample panel, the .js file can be found in a [lib](PanelPopupSample/lib) folder and the .css file in a [css](PanelPopupSample/css) folder.
 
-* panel-popup.js
-* panel-popup.css
+* [panel-popup.js](Files/panel-popup.js)
+* panel-popup.css(Files/panel-poup.css)
 
 In your index.html file, just link to these files.
 
@@ -27,11 +27,9 @@ For easy debugging and added flexibility, I usually create a symbolic link from 
 sudo ln -s "[PATH TO WORKING FOLDER]" "/Library/Application Support/Adobe/CEP/extensions/"
 ```
 
-
-
 ## Usage
 
-###Basic Features
+### Basic Features
 
 At its most basic level, you can just initalize and then display a new `PanelPopup` object:
 ```javascript
@@ -77,9 +75,9 @@ function finishedAction() {
 
 ```
 
-###Advanced Features
+### Advanced Features
 
-######Template Strings
+###### Template Strings
 
 You can also include template strings in curly braces:
 ```javascript
@@ -96,7 +94,7 @@ myPopup.showPopup({
 });
 ```
 
-######Options
+###### Options
 
 You can also pass a `callback` in the `options` object that will get called after the popup closes. See the example project for more information about the callback and a few caveats for dealing with javascript scope issues.
 ```javascript
@@ -123,7 +121,7 @@ myPopup.showPopup({
 });
 ```
 
-######Callbacks
+###### Callbacks
 
 In addition to specifying a callback in the `options` object, you can pass a callback as an argument to the `hidePopup` method. It's hard to see why you'd want to, but it's there if you need it. If you've already set a callback when you called `showPopup,` passing a callback to `hidePopup` will overwrite it.
 
