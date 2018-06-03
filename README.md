@@ -11,7 +11,7 @@ This repository consists of the source files for the overlay as well as a sample
 Installation is simple. Copy the following files into your panel folder. You'll find them in the [Files](Files/) folder. In the sample panel, the .js file can be found in a [lib](PanelPopupSample/lib) folder and the .css file in a [css](PanelPopupSample/css) folder.
 
 * [panel-popup.js](Files/panel-popup.js)
-* panel-popup.css(Files/panel-poup.css)
+* [panel-popup.css](Files/panel-popup.css)
 
 In your index.html file, just link to these files.
 
