@@ -2,7 +2,7 @@
 
 This is a library that generates and manages a "please wait" modal overlay layer on an HTML page. While not exclusively compatibile with [Adobe CEP panels](https://github.com/Adobe-CEP), that is the intended use case.
 
-When executing extendscript from a CEP panel, [the UI freezes](https://forums.adobe.com/thread/2441258), so it makes sense to give the user some sort of message that the application is working. Unfortunately animated spinners don't work (because of the UI blocking), so a modal overlay seems to be the best bet.
+When executing extendscript from a CEP panel, [the UI freezes](https://forums.adobe.com/thread/2441258), so it makes sense to give the user some sort of message that the application is working. Unfortunately [animated spinners](https://www.w3schools.com/howto/howto_css_loader.asp) don't work (because of the UI blocking), so a modal overlay seems to be the best bet.
 
 This repository consists of the [source files](Files/) for the overlay as well as a [sample CEP panel](PanelPopupSample/) that runs through some of the features of the library.
 
@@ -52,13 +52,14 @@ From personal experience, if you show the popup and then call `csInterface.evalS
 ```javascript
 myPopup.show();
 var delay = setTimeout(function (){
+    var csInterface = new CSInterface();
     csInterface.evalScript('Do something here')
 }, 100);
 ```
 **Tip:** With trial and error, I've found that about 50 milliseconds is a long enough delay but less than that is not. I've been doing 100 milliseconds just to be safe. If someone encounters a situation where even 100 isn't enough, first of all, get a faster computer! But second, shoot me [an email](mailto:david.heidelberger@gmail.com) or file a [bug report](https://github.com/dheidelberger/panel-popup/issues) and let know and I'll increase the delay.
 
 
-To hide the popup, use the `hidePopup` method. You will likely want to declare `myPopup` as a global variable so that you can call its methods from anywhere in your panel code.
+To hide the popup, use the [`hidePopup`](#PanelPopup+hidePopup) method. You will likely want to declare `myPopup` as a global variable so that you can call its methods from anywhere in your panel code.
 ```javascript
 myPopup.hidePopup();
 ```
@@ -90,7 +91,7 @@ You can also include template strings in curly braces:
 var myPopup = new PanelPopup("<h2>Doing {something}</h2><p>This may take {duration} for large projects</p>");
 ```
 
-Later, when you call the `showPopup` method, you can pass an `options` object that tells the panel how to handle the template string:
+Later, when you call the [`showPopup`](#PanelPopup+showPopup) method, you can pass an [`options`](#options) object that tells the panel how to handle the template string:
 ```javascript
 myPopup.showPopup({
     templateKeys: {
@@ -100,9 +101,9 @@ myPopup.showPopup({
 });
 ```
 
-###### Options
+###### Additional Options
 
-You can also pass a `callback` in the `options` object that will get called after the popup closes. See the example project for more information about the callback and a few caveats for dealing with javascript scope issues.
+You can also pass a `callback` in the [`options`](#options) object that will get called after the popup closes. See the example project for more information about the callback and a few caveats for dealing with javascript scope issues.
 ```javascript
 myPopup.showPopup({
     templateKeys: {
@@ -113,7 +114,7 @@ myPopup.showPopup({
 });
 ```
 
-The `options` object also lets you specify that you'd like a close button and to optionally specify the caption on the button. Remember, though, that when extendscript is executing, the user interface is frozen, so the user won't be able to press the close button until the extendscript is done executing.
+The [`options`](#options) object also lets you specify that you'd like a close button and to optionally specify the caption on the button. Remember, though, that when extendscript is executing, the user interface is frozen, so the user won't be able to press the close button until the extendscript is done executing.
 ```javascript
 myPopup.showPopup({
     templateKeys: {
@@ -129,7 +130,7 @@ myPopup.showPopup({
 
 ###### Callbacks
 
-In addition to specifying a callback in the `options` object, you can pass a callback as an argument to the `hidePopup` method. It's hard to see why you'd want to, but it's there if you need it. If you've already set a callback when you called `showPopup,` passing a callback to `hidePopup` will overwrite it.
+In addition to specifying a callback in the [`options`](#options) object, you can pass a callback as an argument to the [`hidePopup`](#PanelPopup+hidePopup) method. It's hard to see why you'd want to, but it's there if you need it. If you've already set a callback when you called [`showPopup,`](#PanelPopup+showPopup) passing a callback to [`hidePopup`](#PanelPopup+hidePopup) will overwrite it.
 
 ###### Styling
 
