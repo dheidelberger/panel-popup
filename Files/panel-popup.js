@@ -162,21 +162,25 @@ function PanelPopup(content) {
      */
     this.showPopup = function(content,options) {
 
-        
-        
-        if (typeof content == 'string') {
-            this.setContent(content);
-        } else if (typeof content == 'object') {
-            this.parseOptions(content)
+        if (!this.showing) { //Prevents us from showing the same popup twice
+
+            //These if statements figure out which params the user entered
+            if (typeof content == 'string') {
+                this.setContent(content);
+            } else if (typeof content == 'object') {
+                this.parseOptions(content)
+            }
+    
+            if (typeof options == 'object') {
+                this.parseOptions(options);
+            }
+    
+            
+    
+            this.setupPopup();
+    
         }
-
-        if (typeof options == 'object') {
-            this.parseOptions(options);
-        }
-
         
-
-        this.setupPopup();
 
     };
     
