@@ -4,7 +4,9 @@ This is a library that generates and manages a "please wait" modal overlay layer
 
 When executing extendscript from a CEP panel, [the UI freezes](https://forums.adobe.com/thread/2441258), so it makes sense to give the user some sort of message that the application is working. Unfortunately animated spinners don't work (because of the UI blocking), so a modal overlay seems to be the best bet.
 
-This repository consists of the source files for the overlay as well as a sample CEP panel that runs through some of the features of the library.
+This repository consists of the [source files](Files/) for the overlay as well as a [sample CEP panel](PanelPopupSample/) that runs through some of the features of the library.
+
+![A basic screenshot](Images/screenshot.png)
 
 ## Installation
 
@@ -124,6 +126,10 @@ myPopup.showPopup({
 ###### Callbacks
 
 In addition to specifying a callback in the `options` object, you can pass a callback as an argument to the `hidePopup` method. It's hard to see why you'd want to, but it's there if you need it. If you've already set a callback when you called `showPopup,` passing a callback to `hidePopup` will overwrite it.
+
+###### Styling
+
+The styling is very basic and easy to customize. You can look at the (panel-popup.css)[Files/panel-popup.css] file to see what gets styled. There are some comments in there to get you started. To customize the look of the popup, the safest option is to create your own stylesheet that overrides some of the default styles. The sample project has a (custom stylesheet)[PanelPopupSample/css/panel-popup-custom.css] that can be toggled on and off to give you an idea of how to do this.
 
 ## Full Documentation
 <a name="PanelPopup"></a>

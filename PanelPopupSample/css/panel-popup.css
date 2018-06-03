@@ -1,7 +1,7 @@
+/* This is the outer div that contains the entire popup. You probably won't need to tweak these settings */
 .ppopup-waiting {
 	
 	position: absolute;
-	top: 35%;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -11,6 +11,9 @@
 
 }
 
+/*This is the div that adds the semi-transparent layer over the panel. 
+Background and opacity may be of interest
+A higher opacity number means less transparent*/
 .ppopup-overlay {
 	background: #000000;
 	opacity: 0.95;
@@ -21,11 +24,14 @@
 	left: 0;
 }
 
+/*All the content, including the button is contained within this div. 
+If you're going to customize the look, this is where you're probably going to be spending the most time. */
 .ppopup-container {
 	position: absolute;
 	top: 35%;
 	left: 0;
 	right: 0;
 	text-align: center;
-	color: white
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
 }

@@ -133,10 +133,40 @@ function callbackOverwrite() {
         });
     },100);
 
-
-
 }
 
+function screenshot() {
+    var screenshotPopup = new PanelPopup();
+    screenshotPopup.showPopup("<h2>Panel Popup</h2><p>A simple javascript library to generate and manage a \"please wait\" modal overlay layer for Adobe CEP panels.</p>",{
+        closeButton: true
+    });
+}
+
+//The code here really isn't important, the thing to note is that you can override the default styles with your own stylesheet
+function toggleStyle() {
+
+    var customStylesheet = document.getElementById('custom-styles').sheet;
+    var styleButton = document.getElementById('styles')
+    var styleState = ""
+
+    if (customStylesheet.disabled) {
+        customStylesheet.disabled = false;
+        styleButton.innerHTML = "Turn off the custom styles";
+        styleState = "enabled";
+    } else {
+        customStylesheet.disabled = true;
+        styleButton.innerHTML = "Turn on the custom styles";
+        styleState = "disabled";
+    }
+
+    var stylePopup = new PanelPopup();
+    stylePopup.showPopup("<h2>Custom Styles have been {state}</h2><p>You can override the default styles with your own css stylesheet.</p>",{
+        closeButton: true,
+        templateKeys: {
+            state: styleState
+        }
+    });   
+}
 
 
 function bodyLoaded(){
@@ -149,6 +179,12 @@ function bodyLoaded(){
     document.getElementById('long-call-good').addEventListener('click',longCallGood);
     document.getElementById('callback-fail-1').addEventListener('click',callbackFail1);
     document.getElementById('callback-overwrite').addEventListener('click',callbackOverwrite);
+    document.getElementById('screenshot').addEventListener('click',screenshot);
+    document.getElementById('styles').addEventListener('click',toggleStyle);
+
+    var customStylesheet = document.getElementById('custom-styles').sheet;
+    customStylesheet.disabled = true;
+    
 
 
     
